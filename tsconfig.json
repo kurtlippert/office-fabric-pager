@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es5",
+    "newLine": "LF",
+    "preserveConstEnums": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "pretty": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@redux/*": ["redux/*"],
+      "@libs/*": ["libs/*"],
+      "@Main/*": ["src/*"],
+      "@Header/*": ["src/Header/*"],
+      "@Body/*": ["src/Body/*"]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}
