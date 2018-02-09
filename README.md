@@ -10,3 +10,6 @@
   
 **Notes**
 * `tsconfig` may have extraneous items (libs for example)
+* `tsconfig.webpack.json` is what webpack will transpile ts into
+  1. it receives the es5 code with es6 modules so it can tree-shake...
+  2. then it transpiles again to es5 and commonjs modules for the browser 
