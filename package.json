@@ -1,6 +1,6 @@
 {
-  "name": "react-ts-starter",
-  "description": "Starter code for react / redux / typescript / webpack project",
+  "name": "pagination-test",
+  "description": "Testing of a custom pagination control with office fabric styling",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Kurt Lippert",
