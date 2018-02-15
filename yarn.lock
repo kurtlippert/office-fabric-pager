@@ -2,6 +2,41 @@
 # yarn lockfile v1
 
 
+"@microsoft/load-themed-styles@^1.7.13":
+  version "1.7.29"
+  resolved "https://registry.yarnpkg.com/@microsoft/load-themed-styles/-/load-themed-styles-1.7.29.tgz#286f2b659b2015b0b955172b758b0dbd5bf36a5c"
+
+"@types/clean-css@*":
+  version "3.4.30"
+  resolved "https://registry.yarnpkg.com/@types/clean-css/-/clean-css-3.4.30.tgz#0052c136f5248002428e3638b37de4a39818641d"
+
+"@types/clean-webpack-plugin@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@types/clean-webpack-plugin/-/clean-webpack-plugin-0.1.1.tgz#068b0064bc3e1cfed62926523271fc96c493dbeb"
+  dependencies:
+    "@types/webpack" "*"
+
+"@types/extract-text-webpack-plugin@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/extract-text-webpack-plugin/-/extract-text-webpack-plugin-3.0.1.tgz#47e686ce9913b882abb8ee343ef5eda8df266576"
+  dependencies:
+    "@types/webpack" "*"
+
+"@types/html-minifier@*":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@types/html-minifier/-/html-minifier-3.5.1.tgz#b476b9e89ad4d3953fb2d278df994066144f6629"
+  dependencies:
+    "@types/clean-css" "*"
+    "@types/relateurl" "*"
+    "@types/uglify-js" "*"
+
+"@types/html-webpack-plugin@^2.30.2":
+  version "2.30.2"
+  resolved "https://registry.yarnpkg.com/@types/html-webpack-plugin/-/html-webpack-plugin-2.30.2.tgz#1e5bd183392d10b122c1aa740a2be0d04910f3dc"
+  dependencies:
+    "@types/html-minifier" "*"
+    "@types/webpack" "*"
+
 "@types/lodash@^4.14.100":
   version "4.14.102"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.102.tgz#586a3e22385fc79b07cef9c5a1c8a5387986fbc8"
@@ -13,6 +48,12 @@
 "@types/node@9.4.0":
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.0.tgz#b85a0bcf1e1cc84eb4901b7e96966aedc6f078d1"
+
+"@types/optimize-css-assets-webpack-plugin@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@types/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-1.3.2.tgz#673d4b5ea120b0fe1d617fe80956c1819882ff04"
+  dependencies:
+    "@types/webpack" "*"
 
 "@types/react-dom-factories@1.0.0":
   version "1.0.0"
@@ -38,6 +79,10 @@
   version "16.0.36"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.36.tgz#ceb5639013bdb92a94147883052e69bb2c22c69b"
 
+"@types/relateurl@*":
+  version "0.2.28"
+  resolved "https://registry.yarnpkg.com/@types/relateurl/-/relateurl-0.2.28.tgz#6bda7db8653fa62643f5ee69e9f69c11a392e3a6"
+
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/strip-bom/-/strip-bom-3.0.0.tgz#14a8ec3956c2e81edb7520790aecf21c290aebd2"
@@ -56,6 +101,21 @@
   dependencies:
     source-map "^0.6.1"
 
+"@types/webpack-merge@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@types/webpack-merge/-/webpack-merge-4.1.2.tgz#75b9508c1324777873ec463b89486b95bc4fc852"
+  dependencies:
+    "@types/webpack" "*"
+
+"@types/webpack@*":
+  version "3.8.7"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-3.8.7.tgz#c8c0dd1af73e566f8f10fa8f95d4232e6d80d6e9"
+  dependencies:
+    "@types/node" "*"
+    "@types/tapable" "*"
+    "@types/uglify-js" "*"
+    source-map "^0.7.0"
+
 "@types/webpack@3.8.4":
   version "3.8.4"
   resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-3.8.4.tgz#82069b43851ac7fdb94f96245758903c2a989107"
@@ -63,6 +123,37 @@
     "@types/node" "*"
     "@types/tapable" "*"
     "@types/uglify-js" "*"
+
+"@uifabric/icons@>=5.4.2 <6.0.0":
+  version "5.4.2"
+  resolved "https://registry.yarnpkg.com/@uifabric/icons/-/icons-5.4.2.tgz#ed21b69ac467139cc5dfbec55ba75a560ea5bf62"
+  dependencies:
+    "@uifabric/styling" ">=5.16.0 <6.0.0"
+    tslib "^1.7.1"
+
+"@uifabric/merge-styles@>=5.11.0 <6.0.0", "@uifabric/merge-styles@>=5.11.2 <6.0.0":
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/@uifabric/merge-styles/-/merge-styles-5.11.2.tgz#48ffd37bcfda8bfc8337318dc05e4a38118154e5"
+  dependencies:
+    tslib "^1.7.1"
+
+"@uifabric/styling@>=5.16.0 <6.0.0", "@uifabric/styling@>=5.17.0 <6.0.0":
+  version "5.17.0"
+  resolved "https://registry.yarnpkg.com/@uifabric/styling/-/styling-5.17.0.tgz#c2a8f03ad6d38e2133b386e4e140536d780e26e2"
+  dependencies:
+    "@microsoft/load-themed-styles" "^1.7.13"
+    "@uifabric/merge-styles" ">=5.11.0 <6.0.0"
+    "@uifabric/utilities" ">=5.7.1 <6.0.0"
+    tslib "^1.7.1"
+
+"@uifabric/utilities@>=5.10.2 <6.0.0", "@uifabric/utilities@>=5.7.1 <6.0.0":
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/@uifabric/utilities/-/utilities-5.10.2.tgz#3cc91788eac0953a5ff3a36e847411b1fd28301b"
+  dependencies:
+    "@microsoft/load-themed-styles" "^1.7.13"
+    "@uifabric/merge-styles" ">=5.11.2 <6.0.0"
+    prop-types "^15.5.10"
+    tslib "^1.7.1"
 
 abbrev@1:
   version "1.1.1"
@@ -1168,6 +1259,10 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
+csstips@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/csstips/-/csstips-0.2.2.tgz#b8e0a5194aa43abe160ae66ecb291362838df683"
+
 currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
@@ -1863,10 +1958,6 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-font-awesome@4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
-
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -1910,6 +2001,10 @@ fragment-cache@^0.2.1:
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
   dependencies:
     map-cache "^0.2.2"
+
+free-style@2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/free-style/-/free-style-2.5.1.tgz#5e3f684c470d3bba7e4dbb43524e0a08917e873c"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -3472,6 +3567,18 @@ obuf@^1.0.0, obuf@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.1.tgz#104124b6c602c6796881a042541d36db43a5264e"
 
+office-ui-fabric-react@^5.49.0:
+  version "5.49.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-5.49.0.tgz#7d180c81ab91aab81e23d2354cee05474dd61caf"
+  dependencies:
+    "@microsoft/load-themed-styles" "^1.7.13"
+    "@uifabric/icons" ">=5.4.2 <6.0.0"
+    "@uifabric/merge-styles" ">=5.11.2 <6.0.0"
+    "@uifabric/styling" ">=5.17.0 <6.0.0"
+    "@uifabric/utilities" ">=5.10.2 <6.0.0"
+    prop-types "^15.5.10"
+    tslib "^1.7.1"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -4775,6 +4882,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
+source-map@^0.7.0:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.1.tgz#493620ba1692945d680b93862435bf0ed95a2aa4"
+
 spdx-correct@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/spdx-correct/-/spdx-correct-1.0.2.tgz#4b3073d933ff51f3912f03ac5519498a4150db40"
@@ -5125,7 +5236,7 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
@@ -5177,6 +5288,12 @@ typescript@2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.1.tgz#bb3682c2c791ac90e7c6210b26478a8da085c359"
 
+typestyle@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/typestyle/-/typestyle-1.7.1.tgz#bd86d2425cd1ac7b4089c7ac489239b9d20d28f6"
+  dependencies:
+    free-style "2.5.1"
+
 ua-parser-js@^0.7.9:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
@@ -5212,6 +5329,10 @@ uglifyjs-webpack-plugin@^0.4.6:
 uid-number@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
+
+ultimate-pagination@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ultimate-pagination/-/ultimate-pagination-1.0.0.tgz#1f9f5465678d7410159d5a172c2013465e9bd85f"
 
 underscore.string@2.3.x:
   version "2.3.3"
