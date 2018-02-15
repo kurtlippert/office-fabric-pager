@@ -1,7 +1,24 @@
+
+// react
+import { createElement as r } from 'react'
 import { render } from 'react-dom'
-import { div } from 'react-dom-factories'
+
+// redux
+import { Provider } from 'react-redux'
+import { Reducer } from 'redux'
+
+// misc
+import { State } from '@main/model'
+import update from '@main/update'
+import Pager from '@main/view'
+import configureStore from '@redux/configureStore'
+
+// const store = createStore(update)
+const store = configureStore(update as Reducer<State>)
 
 render(
-    div({}, 'Hello World'),
-    document.getElementById('root'),
+  r(Provider, { store },
+    r(Pager),
+  ),
+  document.getElementById('root'),
 )
