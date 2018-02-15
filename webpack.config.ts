@@ -65,8 +65,8 @@ const commonConfig: Config = {
     alias: {
       '@Body': path.resolve(__dirname, 'src/Body'),
       '@Header': path.resolve(__dirname, 'src/Header'),
-      '@Main': path.resolve(__dirname, 'src'),
       '@libs': path.resolve(__dirname, 'libs'),
+      '@main': path.resolve(__dirname, 'src'),
       '@redux': path.resolve(__dirname, 'redux'),
     },
     extensions: ['.js', '.ts'],
@@ -100,7 +100,7 @@ if (TARGET_ENV === 'development') {
         warnings: false,
       },
     },
-    devtool: 'eval-source-map',
+    devtool: 'cheap-module-source-map',
     entry: [
       'webpack-dev-server/client?http://localhost:8080',
       entryPath,
@@ -136,7 +136,7 @@ if (TARGET_ENV === 'production') {
         {
           test: /\.css$/i,
           use: ExtractTextPlugin.extract({
-            fallbackLoader: 'style-loader',
+            fallback: 'style-loader',
             loader: 'css-loader',
           }),
         },
