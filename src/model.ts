@@ -1,11 +1,3 @@
-import { getPaginationModel, PaginationModel, PaginationModelOptions } from 'ultimate-pagination'
-
-export const initialPaginationModel: PaginationModelOptions = {
-  currentPage: 5,
-  hideFirstAndLastPageLinks: true,
-  totalPages: 10,
-}
-
-export const initialState: State = getPaginationModel(initialPaginationModel)
+import { PaginationModel } from 'ultimate-pagination'
 
 export type State = PaginationModel

@@ -1,4 +1,6 @@
-export type ActionTypeWithoutPayload =
+import { PaginationModelOptions } from 'ultimate-pagination'
+
+export type TypicalActionType =
   | 'FIRST_PAGE'
   | 'PREVIOUS_PAGE'
   | 'FIRST_ELLIPSIS'
@@ -6,47 +8,61 @@ export type ActionTypeWithoutPayload =
   | 'NEXT_PAGE'
   | 'LAST_PAGE'
 
-export type ActionTypeWithPayload =
+export type SelectedPageActionType =
   | 'SELECTED_PAGE'
 
-export type ActionType = ActionTypeWithoutPayload | ActionTypeWithPayload
+export type ActionType = TypicalActionType | SelectedPageActionType
 
-export interface ActionWithoutPayload {
-  type: ActionTypeWithoutPayload
+export type TypicalPagePayload = PaginationModelOptions
+
+export interface SelectedPagePayload {
+  selectedPageNumber: number
+  paginationModelOptions: PaginationModelOptions
 }
 
-export interface ActionWithPayload {
-  type: ActionTypeWithPayload
-  payload: number
+export interface TypicalAction {
+  type: TypicalActionType
+  payload: TypicalPagePayload
 }
 
-export type Action = ActionWithoutPayload | ActionWithPayload
+export interface SelectedPageAction {
+  type: SelectedPageActionType
+  payload: SelectedPagePayload
+}
 
-export const firstPage = (): Action => ({
+export type Action = TypicalAction | SelectedPageAction
+
+export const firstPage = (payload: TypicalPagePayload): Action => ({
+  payload,
   type: 'FIRST_PAGE',
 })
 
-export const previousPage = (): Action => ({
+export const previousPage = (payload: TypicalPagePayload): Action => ({
+  payload,
   type: 'PREVIOUS_PAGE',
 })
 
-export const selectedPage = (payload: number): Action => ({
+export const selectedPage = (payload: SelectedPagePayload): Action => ({
   payload,
   type: 'SELECTED_PAGE',
 })
 
-export const firstEllipsis = (): Action => ({
+export const firstEllipsis = (payload: TypicalPagePayload): Action => ({
+  payload,
   type: 'FIRST_ELLIPSIS',
 })
 
-export const secondEllipsis = (): Action => ({
+export const secondEllipsis = (payload: TypicalPagePayload): Action => ({
+  payload,
   type: 'SECOND_ELLIPSIS',
 })
 
-export const nextPage = (): Action => ({
+export const nextPage = (payload: TypicalPagePayload): Action => ({
+  payload,
   type: 'NEXT_PAGE',
 })
 
-export const lastPage = (): Action => ({
+export const lastPage = (payload: TypicalPagePayload): Action => ({
+  payload,
   type: 'LAST_PAGE',
 })

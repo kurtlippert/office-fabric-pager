@@ -13,12 +13,14 @@ import update from '@main/update'
 import Pager from '@main/view'
 import configureStore from '@redux/configureStore'
 
-// const store = createStore(update)
 const store = configureStore(update as Reducer<State>)
 
 render(
   r(Provider, { store },
-    r(Pager),
+    r(Pager, {
+      currentPage: 5,
+      totalPages: 10,
+    }),
   ),
   document.getElementById('root'),
 )
