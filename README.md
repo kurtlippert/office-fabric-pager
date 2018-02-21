@@ -1,4 +1,4 @@
-# react-ts-starter  
+# office-fabric-pager
 `npm start` to run  
   
 **Features**  
@@ -7,6 +7,9 @@
 * no `JSX` (or `TSX`). All pure ts with `react-dom-factories`
 * `tsconfig` uses `paths` to make import paths look nicer
   * webpack > resolve > alias should inform webpack what these mean (not fully tested yet)  
+* pager component (to be used with table or fabric 'DetailsList' component):  
+  * see `PaginationModelOptions` documentation for the available options
+  * set `initialPaginationModel` in src/model
   
 **Notes**
 * `tsconfig` may have extraneous items (libs for example)
