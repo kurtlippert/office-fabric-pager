@@ -1,14 +1,14 @@
-import { initialState, State } from '@main/model'
+import { State } from '@main/model'
 
 export const loadState = () => {
   try {
     const serializedState = localStorage.getItem('state')
     if (serializedState === null) {
-      return initialState
+      return undefined
     }
     return JSON.parse(serializedState) as State
   } catch (err) {
-    return initialState
+    return undefined
   }
 }
 

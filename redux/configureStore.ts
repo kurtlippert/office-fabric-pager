@@ -4,11 +4,11 @@ import { throttle } from 'lodash'
 import { createStore, GenericStoreEnhancer, Reducer } from 'redux'
 
 const configureStore = (update: Reducer<State>, middlewares?: GenericStoreEnhancer) => {
-  const preloadedState: State = loadState()
+  const preloadedState: State | undefined = loadState()
   const store =
     createStore<State>(
       update,
-      preloadedState,
+      preloadedState || [],
       middlewares,
     )
 
