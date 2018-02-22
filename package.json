@@ -1,9 +1,13 @@
 {
-  "name": "pagination-test",
-  "description": "Testing of a custom pagination control with office fabric styling",
-  "version": "1.0.0",
+  "name": "office-fabric-pager",
+  "description": "Custom pagination control with office fabric styling",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Kurt Lippert",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kurtlippert/office-fabric-pager"
+  },
   "main": "src/index.ts",
   "scripts": {
     "start": "dotenv webpack-dev-server --hot --inline --colors --content-base src/",
