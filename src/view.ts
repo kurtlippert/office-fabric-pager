@@ -58,7 +58,6 @@ const paginationModelItemToPage =
           className: flexItem,
           iconProps: { iconName: IconNames.DoubleChevronLeft } as IIconProps,
           key: paginationModelItem.key,
-          // onClick: () => dispatch(firstPage(initialOptions)),
           onClick: () => dispatchTypicalPageAction(firstPage),
         })
       )
@@ -68,7 +67,6 @@ const paginationModelItemToPage =
           className: flexItem,
           iconProps: { iconName: IconNames.ChevronLeft } as IIconProps,
           key: paginationModelItem.key,
-          // onClick: () => dispatch(previousPage(initialOptions)),
           onClick: () => dispatchTypicalPageAction(previousPage),
         })
       )
@@ -78,7 +76,6 @@ const paginationModelItemToPage =
           className: flexItem,
           iconProps: { iconName: IconNames.ChevronRight } as IIconProps,
           key: paginationModelItem.key,
-          // onClick: () => dispatch(nextPage(initialOptions)),
           onClick: () => dispatchTypicalPageAction(nextPage),
         })
       )
@@ -88,7 +85,6 @@ const paginationModelItemToPage =
           className: flexItem,
           iconProps: { iconName: IconNames.DoubleChevronRight } as IIconProps,
           key: paginationModelItem.key,
-          // onClick: () => dispatch(lastPage(initialOptions)),
           onClick: () => dispatchTypicalPageAction(lastPage),
         })
       )
@@ -98,11 +94,6 @@ const paginationModelItemToPage =
           checked: paginationModelItem.isActive,
           className: flexItem,
           key: paginationModelItem.key,
-          // onClick: () => dispatch(
-          //   selectedPage({
-          //     paginationModelOptions: initialOptions,
-          //     selectedPage: paginationModelItem.value,
-          //   })),
           onClick: () => dispatchSelectedPageAction(selectedPage, paginationModelItem.value),
         }, paginationModelItem.value)
       )
@@ -116,38 +107,12 @@ const paginationModelItemToPage =
         : r(DefaultButton, {
           className: flexItem,
           key: paginationModelItem.key,
-          // dispatchAction: (paginationModelOptions) =>
-          //    dispatch(secondEllipsis(paginationModelOptions))
-          // dispatchAction: (paginationModelOptions) =>
-          //    dispatch(selectedPage({ paginationModelOptions, selectedPage: paginationModelItem.value }))
           onClick: () => dispatchTypicalPageAction(secondEllipsis),
         }, '...')
     default:
       return r(DefaultButton, { className: flexItem, key: paginationModelItem.key }, 'N/A')
   }
 }
-
-// type TypicalPageAction = (paginationModelOptions: PaginationModelOptions) => Action
-
-// type SelectedPageAction = (paginationModelOptions: PaginationModelOptions, selectedPageNumber: number) => Action
-// interface TypicalPageAction {
-//   typicalPageAction: (paginationModelOptions: PaginationModelOptions) => Action,
-// }
-
-// interface SelectedPageAction {
-//   selectedPageAction: (paginationModelOptions: PaginationModelOptions, selectedPageNumber: number) => Action,
-// }
-
-// type PageAction =
-//   | TypicalPageAction
-//   | SelectedPageAction
-// type Payload =
-//   | TypicalPagePayload
-//   | SelectedPagePayload
-
-// type PageAction = (payload: Payload) => Action
-
-// type DispatchAction = (pageAction: PageAction) => Action
 
 type SelectedPageAction = (payload: SelectedPagePayload) => Action
 type TypicalPageAction = (payload: TypicalPagePayload) => Action
@@ -159,8 +124,6 @@ interface PagerProps {
   state: State,
   dispatchSelectedPageAction: DispatchSelectedPageAction
   dispatchTypicalPageAction: DispatchTypicalPageAction
-  // dispatch: Dispatch<State>,
-  // ownProps: PaginationModelOptions,
 }
 
 const Pager: React.SFC<PagerProps> = ({ state, dispatchTypicalPageAction, dispatchSelectedPageAction }) =>
@@ -176,32 +139,6 @@ const mapDispatchToPagerProps = (dispatch: Dispatch<State>, ownProps: Pagination
   dispatchTypicalPageAction: (pageAction: TypicalPageAction) =>
     dispatch(
       pageAction(ownProps)),
-
-  // onPageClick: (payload: SelectedPagePayload | PaginationModelOptions) => (action: Action) => dispatch(action),
-  // tslint:disable-next-line:max-line-length
-  // dispatchAction: (action: (payload: SelectedPagePayload | PaginationModelOptions) => Action) => dispatch(action),
-  // dispatchAction: (options: PaginationModelOptions) => (page?: number) => dispatch(options, selectedPage),
-  // dispatchAction: ((paginationModelOptions: PaginationModelOptions) => (page?: number))(ownProps),
-  // dispatchTypicalAction: (pageAction: PageAction) => {
-  //   return dispatch(
-  //     pageAction(ownProps, selectedPageNumber),
-  //   )
-  //   // if ('typicalPageAction' in pageAction) {
-  //   //   return dispatch(
-  //   //     pageAction.typicalPageAction(ownProps),
-  //   //   )
-  //   // } else if ('selectedPageAction' in pageAction) {
-  //   //   return dispatch(
-  //   //     pageAction.selectedPageAction(ownProps, selectedPageNumber),
-  //   //   )
-  //   // } else {
-  //   //   // tslint:disable-next-line:no-console
-  //   //   console.error('invalid action')
-  //   //   return null
-  //   // }
-  // },
-// onPageClick: (action: (payload: SelectedPagePayload | PaginationModelOptions) => Action) => dispatch(action(payload))
-  // dispatch,
 })
 
 const mapStateToPagerProps = (state: State, ownProps: PaginationModelOptions) => ({
