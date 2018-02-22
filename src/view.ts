@@ -92,7 +92,20 @@ const paginationModelItemToPage =
       return (
         r(DefaultButton, {
           checked: paginationModelItem.isActive,
-          className: flexItem,
+          className: `${flexItem} ${style({
+            $nest: {
+              '&:hover': {
+                backgroundColor: paginationModelItem.isActive
+                  ? 'rgb(200, 200, 200)'
+                  : 'rgb(234, 234, 234)',
+                $nest: {
+                  '&:active': {
+                    backgroundColor: 'rgb(200, 200, 200)',
+                  }
+                }
+              }
+            }
+          })}`,
           key: paginationModelItem.key,
           onClick: () => dispatchSelectedPageAction(selectedPage, paginationModelItem.value),
         }, paginationModelItem.value)
