@@ -1,8 +1,9 @@
-import { Action } from '@main/actions'
-import { State } from '@main/model'
+import 'ie-array-find-polyfill'
 import { getPaginationModel, ITEM_KEYS } from 'ultimate-pagination'
 // tslint:disable-next-line:no-submodule-imports
 import { ItemKeys } from 'ultimate-pagination/lib/ultimate-pagination-constants'
+import { Action } from './actions'
+import { State } from './model'
 
 const getActivePage = (state: State) => {
   const { value = -1 } = state.find((page) => page.isActive) || {}
