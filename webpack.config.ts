@@ -48,27 +48,20 @@ const commonConfig: Config = {
   output: {
     filename: outputFilename,
     path: outputPath,
-    publicPath: TARGET_ENV === 'development' ? 'http://localhost:8080/' : '/kurt-web/',
+    publicPath: TARGET_ENV === 'development' ? 'http://localhost:8080/' : '/office-fabric-pager/',
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'body',
       // script:
-      //   `<script crossorigin src="https://unpkg.com/react@16/umd/react.${TARGET_ENV}.js"></script>
-      //    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.${TARGET_ENV}.js"></script>`,
+      //   `<script crossorigin src="https://unpkg.com/react@16/umd/react.${TARGET_ENV}.min.js"></script>
+      //    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.${TARGET_ENV}.min.js"></script>`,
       template: 'template.html',
       title: 'Kurt Lippert',
     }),
     new CheckerPlugin(),
   ],
   resolve: {
-    alias: {
-      '@Body': path.resolve(__dirname, 'src/Body'),
-      '@Header': path.resolve(__dirname, 'src/Header'),
-      '@libs': path.resolve(__dirname, 'libs'),
-      '@main': path.resolve(__dirname, 'src'),
-      '@redux': path.resolve(__dirname, 'redux'),
-    },
     extensions: ['.js', '.ts'],
   },
 }
@@ -129,17 +122,18 @@ if (TARGET_ENV === 'production') {
 
   module.exports = merge(commonConfig, {
     entry: {
+      main: entryPath,
       vendor: ['react', 'react-dom', 'react-dom-factories'],
     },
     module: {
       rules: [
-        {
-          test: /\.css$/i,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            loader: 'css-loader',
-          }),
-        },
+        // {
+        //   test: /\.css$/i,
+        //   use: ExtractTextPlugin.extract({
+        //     fallback: 'style-loader',
+        //     loader: 'css-loader',
+        //   }),
+        // },
         {
           test: /\.(woff|woff2|ttf|eot)$/,
           use: 'url-loader?limit=50000',
@@ -150,7 +144,7 @@ if (TARGET_ENV === 'production') {
       new CleanDistPlugin('dist', {
         root: __dirname,
       }),
-      new ExtractTextPlugin(vendorCSSName),
+      // new ExtractTextPlugin(vendorCSSName),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
       }),
@@ -160,13 +154,13 @@ if (TARGET_ENV === 'production') {
           // minimize: true,
           // mangle:  true
       }),
-      new PurifyCSSPlugin({
-        basePath: outputPath,
-        paths: ['index.html'],
-      }),
-      new OptimizeCSSPlugin({
-        cssProcessorOptions: { discardComments: { removeAll: true }},
-      }),
+      // new PurifyCSSPlugin({
+      //   basePath: outputPath,
+      //   // paths: ['index.html'],
+      // }),
+      // new OptimizeCSSPlugin({
+      //   cssProcessorOptions: { discardComments: { removeAll: true }},
+      // }),
     ],
   })
 }

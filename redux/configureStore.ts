@@ -1,7 +1,7 @@
-import { loadState, saveState } from '@libs/localStorage'
-import { State } from '@main/model'
 import { throttle } from 'lodash'
 import { createStore, GenericStoreEnhancer, Reducer } from 'redux'
+import { loadState, saveState } from '../libs/localStorage'
+import { State } from '../src/model'
 
 const configureStore = (update: Reducer<State>, middlewares?: GenericStoreEnhancer) => {
   const preloadedState: State | undefined = loadState()

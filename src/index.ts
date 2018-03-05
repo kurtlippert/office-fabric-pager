@@ -8,10 +8,10 @@ import { Provider } from 'react-redux'
 import { Reducer } from 'redux'
 
 // misc
-import { State } from '@main/model'
-import update from '@main/update'
-import Pager from '@main/view'
-import configureStore from '@redux/configureStore'
+import configureStore from '../redux/configureStore'
+import { State } from './model'
+import update from './update'
+import Pager from './view'
 
 const store = configureStore(update as Reducer<State>)
 

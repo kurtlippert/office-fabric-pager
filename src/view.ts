@@ -12,6 +12,15 @@ import { DefaultButton, IIconProps } from 'office-ui-fabric-react'
 import { IconNames, initializeIcons } from 'office-ui-fabric-react/lib/Icons'
 
 // misc
+import { Dispatch } from 'redux'
+import { style } from 'typestyle'
+import {
+  getPaginationModel,
+  ITEM_KEYS,
+  ITEM_TYPES,
+  PaginationModelItem,
+  PaginationModelOptions,
+} from 'ultimate-pagination'
 import {
   Action,
   firstEllipsis,
@@ -23,17 +32,8 @@ import {
   selectedPage,
   SelectedPagePayload,
   TypicalPagePayload,
-} from '@main/actions'
-import { State } from '@main/model'
-import { Dispatch } from 'redux'
-import { style } from 'typestyle'
-import {
-  getPaginationModel,
-  ITEM_KEYS,
-  ITEM_TYPES,
-  PaginationModelItem,
-  PaginationModelOptions,
-} from 'ultimate-pagination'
+} from './actions'
+import { State } from './model'
 
 initializeIcons()
 
@@ -95,16 +95,16 @@ const paginationModelItemToPage =
           className: `${flexItem} ${style({
             $nest: {
               '&:hover': {
-                backgroundColor: paginationModelItem.isActive
-                  ? 'rgb(200, 200, 200)'
-                  : 'rgb(234, 234, 234)',
                 $nest: {
                   '&:active': {
                     backgroundColor: 'rgb(200, 200, 200)',
-                  }
-                }
-              }
-            }
+                  },
+                },
+                backgroundColor: paginationModelItem.isActive
+                  ? 'rgb(200, 200, 200)'
+                  : 'rgb(234, 234, 234)',
+              },
+            },
           })}`,
           key: paginationModelItem.key,
           onClick: () => dispatchSelectedPageAction(selectedPage, paginationModelItem.value),

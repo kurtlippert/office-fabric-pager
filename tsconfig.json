@@ -27,5 +27,8 @@
       "@libs/*": ["libs/*"],
       "@redux/*": ["redux/*"],
     }
-  }
+  },
+  "include": [
+    "src/index.ts"
+  ]
 }
